@@ -41,11 +41,11 @@ export default function Home() {
               size="lg"
               className="bg-taisi-red hover:bg-taisi-red/90 text-white text-base px-10 py-6 rounded-full"
             >
-              <a href="#apply">Apply Now</a>
+              <a href="https://airtable.com/appVfG77MoQbG3bgi/pagW6YDWqH4GG76kw/form" target="_blank" rel="noopener noreferrer">Apply Now</a>
             </Button>
             <div className="flex flex-col gap-1 text-sm text-muted-foreground">
               <span>4 weekends · Free · Limited spots</span>
-              <span>Funded by Kairos · Hosted at Trajectory Labs</span>
+              <span>Apply early — spots fill as applications are reviewed</span>
             </div>
           </div>
         </div>
@@ -72,17 +72,17 @@ export default function Home() {
           {[
             {
               title: "Research skills",
-              desc: "Hands-on workshops where you build real AI safety evaluations and research artifacts. Not lectures — you ship things.",
+              desc: "Hands-on workshops where you build real AI safety evaluations and research artifacts.",
               accent: "taisi-red",
             },
             {
               title: "Portfolio pieces",
-              desc: "Walk away with evals on your GitHub and published write-ups. Tangible, legible proof you can do this work.",
+              desc: "Walk away with real projects on your GitHub and published write-ups. Tangible, legible proof you can do this work.",
               accent: "taisi-blue",
             },
             {
               title: "Network",
-              desc: "AI safety researchers join for lunch every session. Get connected to a field that's actively hiring.",
+              desc: "AI safety researchers join for lunch every session.",
               accent: "taisi-red",
             },
             {
@@ -115,37 +115,30 @@ export default function Home() {
             </span>
           </div>
           <h2 className="font-serif text-3xl md:text-5xl tracking-tight mb-16 max-w-2xl">
-            One day a week.<br />Four weeks. That&apos;s it.
+            One day a week.<br />Four weeks.
           </h2>
 
           <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
-                time: "09:00",
                 label: "Morning",
                 desc: "AI safety fundamentals — threat models, alignment, governance. Understand the field.",
               },
               {
-                time: "12:00",
                 label: "Lunch",
                 desc: "Catered. AI safety researchers join to share their work and connect with you.",
               },
               {
-                time: "13:00",
                 label: "Afternoon",
                 desc: "Technical workshops — build evaluations, learn tools, produce artifacts you keep.",
               },
               {
-                time: "17:00",
                 label: "Done",
                 desc: "Go home with new skills and something to show for it. Repeat next weekend.",
               },
             ].map((item) => (
               <div key={item.label}>
-                <span className="font-mono text-xs text-taisi-blue">
-                  {item.time}
-                </span>
-                <h3 className="text-lg font-semibold mt-1 mb-3">
+                <h3 className="text-lg font-semibold mb-3">
                   {item.label}
                 </h3>
                 <p className="text-sm text-white/60 leading-relaxed">
@@ -167,10 +160,6 @@ export default function Home() {
             <div>
               <span className="text-white/40 block mb-1">When</span>
               <span>Summer 2026, weekends</span>
-            </div>
-            <div>
-              <span className="text-white/40 block mb-1">Already busy?</span>
-              <span>Designed for students with internships</span>
             </div>
           </div>
         </div>
@@ -234,9 +223,7 @@ export default function Home() {
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
                 AI safety is the field focused on making sure advanced AI
-                systems are reliable and aligned with human values. It&apos;s
-                one of the fastest-growing areas in AI — organizations are
-                actively hiring.
+                systems are reliable and aligned with human values.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="prereqs">
@@ -254,7 +241,7 @@ export default function Home() {
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
                 The program runs weekends only — one day per week for four
-                weeks. Most participants have other commitments during the week.
+                weeks.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="cost">
@@ -280,7 +267,16 @@ export default function Home() {
                 What do I need to apply?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                Be a Toronto-area undergrad who can code. That&apos;s it.
+                Be a Toronto-area undergrad who can code.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="not-undergrad">
+              <AccordionTrigger className="text-left">
+                Can I apply if I&apos;m not an undergrad?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Yes! We welcome applications from anyone in the Toronto area
+                with programming experience.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -305,12 +301,12 @@ export default function Home() {
             size="lg"
             className="bg-taisi-red hover:bg-taisi-red/90 text-white text-base px-12 py-6 rounded-full"
           >
-            <a href="https://forms.gle/placeholder" target="_blank" rel="noopener noreferrer">
+            <a href="https://airtable.com/appVfG77MoQbG3bgi/pagW6YDWqH4GG76kw/form" target="_blank" rel="noopener noreferrer">
               Apply Now →
             </a>
           </Button>
           <p className="mt-6 text-sm text-white/40">
-            Short application · Takes ~5 minutes
+            2-minute application · Spots fill as applications are reviewed
           </p>
         </div>
       </section>
@@ -319,7 +315,7 @@ export default function Home() {
       <footer className="mx-auto max-w-6xl px-6 py-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
         <span>© 2026 Toronto AI Safety Initiative</span>
         <div className="flex gap-6">
-          <a href="/program" className="hover:text-foreground transition-colors">Program</a>
+          <a href="/program" className="hover:text-foreground transition-colors">Programs</a>
           <a href="/about" className="hover:text-foreground transition-colors">About</a>
           <a href="mailto:hello@taisi.ca" className="hover:text-foreground transition-colors">Contact</a>
         </div>

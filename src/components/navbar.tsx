@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -12,13 +11,11 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-2.5">
-          <Image
-            src="/icon.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/icon.svg"
             alt=""
-            width={280}
-            height={322}
-            className="h-8 w-auto"
-            priority
+            className="h-6 w-auto"
           />
           <span className="font-serif text-xl tracking-tight">TAISI</span>
         </Link>
@@ -27,7 +24,7 @@ export function Navbar() {
             href="/program"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            Program
+            Programs
           </Link>
           <Link
             href="/about"
@@ -36,7 +33,7 @@ export function Navbar() {
             About
           </Link>
           <Button asChild size="sm" className="bg-taisi-red hover:bg-taisi-red/90 text-white">
-            <a href="#apply">Apply →</a>
+            <a href="https://airtable.com/appVfG77MoQbG3bgi/pagW6YDWqH4GG76kw/form" target="_blank" rel="noopener noreferrer">Apply →</a>
           </Button>
         </div>
         <button
@@ -58,7 +55,7 @@ export function Navbar() {
             className="text-sm text-muted-foreground"
             onClick={() => setOpen(false)}
           >
-            Program
+            Programs
           </Link>
           <Link
             href="/about"

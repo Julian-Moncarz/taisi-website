@@ -16,7 +16,7 @@ export default function Program() {
             Summer Intensive
           </h1>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-xl">
-            4 weekends. Real AI safety research skills. Portfolio pieces you can
+            4 weekends. AI safety research skills and portfolio pieces you can
             show employers and grad programs. Free.
           </p>
         </div>
@@ -115,6 +115,78 @@ export default function Program() {
                 <a href="/#apply">Apply Now →</a>
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="mx-auto max-w-3xl px-6">
+        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      </div>
+
+      {/* Intro Fellowships */}
+      <section className="mx-auto max-w-3xl px-6 py-24">
+        <div className="space-y-16">
+          <div>
+            <div className="flex items-center gap-2 mb-8">
+              <div className="h-px w-8 bg-taisi-red" />
+              <span className="font-mono text-xs tracking-widest uppercase text-taisi-red">
+                During the school year
+              </span>
+            </div>
+            <h2 className="font-serif text-3xl md:text-5xl tracking-tight mb-6">
+              Intro to AI Safety Fellowships
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
+              Two 8-week reading groups covering the fundamentals of AI safety
+              — one focused on alignment, one on governance. Weekly sessions
+              over dinner, on a schedule set by you and your cohort.
+            </p>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Curriculum developed by{" "}
+              <a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer" className="text-taisi-blue hover:underline">BlueDot Impact</a>,
+              adapted by TAISI.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-8">
+            <div className="rounded-2xl border bg-card p-8">
+              <div className="h-1 w-8 bg-taisi-blue mb-6 rounded-full" />
+              <h3 className="text-lg font-semibold mb-3">Alignment Track</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                The technical challenge of making AI systems reliably follow
+                human intentions.
+              </p>
+              <ul className="text-sm text-muted-foreground space-y-2">
+                <li>Intro to deep learning</li>
+                <li>RLHF &amp; scalable oversight</li>
+                <li>Mechanistic interpretability</li>
+                <li>Technical governance</li>
+                <li>Contributing to technical AI safety</li>
+              </ul>
+            </div>
+            <div className="rounded-2xl border bg-card p-8">
+              <div className="h-1 w-8 bg-taisi-red mb-6 rounded-full" />
+              <h3 className="text-lg font-semibold mb-3">Governance Track</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                The role of policy, institutions, and global coordination in
+                reducing AI risks.
+              </p>
+              <ul className="text-sm text-muted-foreground space-y-2">
+                <li>Forecasting &amp; key actors</li>
+                <li>Effective policy frameworks</li>
+                <li>Governance at frontier labs</li>
+                <li>Canada&apos;s role in international cooperation</li>
+                <li>Contributing to AI governance</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border bg-taisi-warm/50 p-8 text-center">
+            <p className="text-muted-foreground">
+              Applications for the fellowships are currently closed. They&apos;ll
+              open again next spring.
+            </p>
           </div>
         </div>
       </section>
