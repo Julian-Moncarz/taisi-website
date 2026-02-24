@@ -16,9 +16,8 @@ All commands run from the repo root:
 Next.js 16 app with React 19, Tailwind CSS v4, and shadcn/ui (new-york style, RSC enabled).
 
 **Pages** (App Router):
-- `/` — Landing page (`src/app/page.tsx`) — the only page that matters, drives applications
-- `/program` — Summer Intensive details (`src/app/program/page.tsx`)
-- `/about` — About TAISI (`src/app/about/page.tsx`)
+- `/` — About/credibility page (`src/app/page.tsx`) — mission, programs overview, network, contact
+- `/program` — Programs page (`src/app/program/page.tsx`) — Summer Intensive details + application funnel + Fellowships
 
 **Key components:**
 - `src/components/navbar.tsx` — minimal top nav
@@ -31,7 +30,12 @@ Next.js 16 app with React 19, Tailwind CSS v4, and shadcn/ui (new-york style, RS
 
 ## What This Site Is
 
-TAISI (Toronto AI Safety Initiative) website. Single purpose: **drive applications to the Summer 2026 Intensive**. Everything serves this funnel.
+TAISI (Toronto AI Safety Initiative) website. Two purposes, in order:
+
+1. **Prove legitimacy.** People hear us pitch in class, then look us up. The site must make us look real and credible — not sell them. The selling happens in person.
+2. **Funnel to apply.** Once they trust us, give them a clear path to the Summer Intensive application.
+
+The site is NOT a sales funnel. It's a credibility check that happens to have an apply button.
 
 Design docs live in `/docs/` — read these before making content or layout changes:
 - `docs/01-site-purpose-and-goals.md` — audience, value prop, scope fence
@@ -39,7 +43,9 @@ Design docs live in `/docs/` — read these before making content or layout chan
 
 ## Key Constraints
 
+- **No repeated information** — every piece of info stated exactly once across the site. If it's said on one page, don't say it on another.
+- **Don't sell.** No urgency copy, no aggressive CTAs, no "apply now before it's too late." State what we do and let the credibility speak.
 - **Mobile-first** — most traffic comes from QR codes on phones
 - **Professional, not club-y** — think Anthropic/MATS, not hackathon
 - **No scope creep** — no team page, no blog, no social links, no detailed curriculum
-- Copy tone: direct, confident, career-framed, no jargon
+- Copy tone: direct, confident, informational, no jargon. NOT salesy.

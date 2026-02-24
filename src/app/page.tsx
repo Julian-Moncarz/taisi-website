@@ -1,320 +1,66 @@
-import { Button } from "@/components/ui/button";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="mx-auto max-w-5xl px-6 pt-20 pb-16 md:pt-28 md:pb-20">
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        {/* Subtle gradient orbs */}
-        <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-taisi-blue/5 blur-3xl" />
-        <div className="absolute bottom-[-20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-taisi-red/5 blur-3xl" />
+      <h1 className="font-serif text-3xl md:text-5xl tracking-tight leading-tight max-w-3xl">
+        A student group at the University of Toronto focused on mitigating
+        catastrophic risks from advanced AI.
+      </h1>
 
-        <div className="relative mx-auto max-w-6xl px-6 pt-24 pb-20 md:pt-40 md:pb-32">
-          <div className="flex items-center gap-2 mb-8">
-            <div className="h-px w-8 bg-taisi-red" />
-            <span className="font-mono text-xs tracking-widest uppercase text-taisi-red">
-              Applications close April 5th
-            </span>
-          </div>
+      {/* Why we exist */}
+      <p className="mt-8 text-muted-foreground leading-relaxed max-w-3xl">
+        AI systems are getting more capable fast. Making sure they&apos;re safe
+        and aligned with human values is urgent — and brutally
+        talent-constrained. We run programs to help talented UofT students
+        build skills and have impact in AI safety research.
+      </p>
 
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-tight max-w-4xl leading-[0.95]">
-            Break into AI safety
-            <br />
-            <span className="text-taisi-blue">research</span> this summer
-          </h1>
-
-          <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-            A free, selective weekend intensive for Toronto undergrads.
-            Build portfolio pieces, learn from researchers, and break into
-            one of the fastest-growing fields in AI.
+      {/* Programs */}
+      <div className="mt-10 grid gap-px bg-border sm:grid-cols-2 rounded-xl overflow-hidden border">
+        <Link href="/program" className="bg-card p-6 hover:bg-card/80 transition-colors group">
+          <h3 className="text-sm font-semibold mb-1 group-hover:text-taisi-red transition-colors">
+            Summer Intensive
+          </h3>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Free, selective weekend program. Research skills, portfolio pieces,
+            researcher access.
           </p>
-
-          <div className="mt-10 flex flex-col sm:flex-row items-start gap-6">
-            <Button
-              asChild
-              size="lg"
-              className="bg-taisi-red hover:bg-taisi-red/90 text-white text-base px-10 py-6 rounded-full"
-            >
-              <a id="hero-apply" href="https://airtable.com/appVfG77MoQbG3bgi/pagW6YDWqH4GG76kw/form" target="_blank" rel="noopener noreferrer">Apply Now</a>
-            </Button>
-            <div className="flex flex-col gap-1 text-sm text-muted-foreground">
-              <span>Free · Limited spots</span>
-              <span>Apply early — spots fill as applications are reviewed</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+          <span className="text-xs text-taisi-red mt-2 inline-block">
+            Learn more &rarr;
+          </span>
+        </Link>
+        <Link href="/program#fellowships" className="bg-card p-6 hover:bg-card/80 transition-colors group">
+          <h3 className="text-sm font-semibold mb-1 group-hover:text-taisi-blue transition-colors">
+            Intro Fellowships
+          </h3>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            8-week reading groups in alignment and governance during the school
+            year.
+          </p>
+          <span className="text-xs text-taisi-blue mt-2 inline-block">
+            Learn more &rarr;
+          </span>
+        </Link>
       </div>
 
-      {/* What you get */}
-      <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <div className="flex items-center gap-2 mb-4">
-          <div className="h-px w-8 bg-taisi-blue" />
-          <span className="font-mono text-xs tracking-widest uppercase text-taisi-blue">
-            What you get
-          </span>
-        </div>
-        <h2 className="font-serif text-3xl md:text-5xl tracking-tight mb-16 max-w-2xl">
-          Four weekends that change your trajectory
-        </h2>
-
-        <div className="grid gap-px bg-border sm:grid-cols-2 rounded-2xl overflow-hidden border">
-          {[
-            {
-              title: "Research skills",
-              desc: "Hands-on workshops where you build real AI safety evaluations and research artifacts.",
-              accent: "taisi-red",
-            },
-            {
-              title: "Portfolio pieces",
-              desc: "Walk away with real projects on your GitHub and published write-ups. Tangible, legible proof you can do this work.",
-              accent: "taisi-blue",
-            },
-            {
-              title: "Network",
-              desc: "AI safety researchers join for lunch every session.",
-              accent: "taisi-red",
-            },
-            {
-              title: "A path forward",
-              desc: "Strong participants may continue with research mentors for the rest of the summer.",
-              accent: "taisi-blue",
-            },
-          ].map((item) => (
-            <div
-              key={item.title}
-              className="bg-card p-8 md:p-10"
-            >
-              <div className={`h-1 w-8 bg-${item.accent} mb-6 rounded-full`} />
-              <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {item.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* How it works */}
-      <section className="bg-taisi-dark text-white">
-        <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="h-px w-8 bg-taisi-red" />
-            <span className="font-mono text-xs tracking-widest uppercase text-taisi-red">
-              How it works
-            </span>
-          </div>
-          <h2 className="font-serif text-3xl md:text-5xl tracking-tight mb-16 max-w-2xl">
-            One day a week.<br />Four weeks.
-          </h2>
-
-          <div className="max-w-2xl">
-            {[
-              {
-                label: "Morning",
-                desc: "AI safety fundamentals — threat models, alignment, governance. Understand the field.",
-                accent: "bg-taisi-blue",
-              },
-              {
-                label: "Lunch",
-                desc: "Catered. AI safety researchers join to share their work and connect with you.",
-                accent: "bg-taisi-red",
-              },
-              {
-                label: "Afternoon",
-                desc: "Technical workshops — build evaluations, learn tools, produce artifacts you keep.",
-                accent: "bg-taisi-blue",
-              },
-              {
-                label: "Done",
-                desc: "Go home with new skills and something to show for it. Repeat next weekend.",
-                accent: "bg-taisi-red",
-              },
-            ].map((item, i) => (
-              <div key={item.label} className="flex gap-6 relative">
-                <div className="flex flex-col items-center">
-                  <div className={`w-2.5 h-2.5 rounded-full ${item.accent} shrink-0 mt-1.5`} />
-                  {i < 3 && <div className="w-px flex-1 bg-white/10" />}
-                </div>
-                <div className={i < 3 ? "pb-8" : ""}>
-                  <h3 className="text-lg font-semibold">{item.label}</h3>
-                  <p className="text-sm text-white/60 leading-relaxed mt-1">
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-16 grid grid-cols-3 gap-8 max-w-2xl text-sm">
-            <div>
-              <span className="text-white/40 block mb-1">Where</span>
-              <span>Trajectory Labs, Toronto</span>
-            </div>
-            <div>
-              <span className="text-white/40 block mb-1">Cost</span>
-              <span>Free — food &amp; API credits included</span>
-            </div>
-            <div>
-              <span className="text-white/40 block mb-1">When</span>
-              <span>Summer 2026, weekends</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Credibility */}
-      <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <div className="flex items-center gap-2 mb-4">
-          <div className="h-px w-8 bg-taisi-blue" />
-          <span className="font-mono text-xs tracking-widest uppercase text-taisi-blue">
-            Our network
-          </span>
-        </div>
-        <h2 className="font-serif text-3xl md:text-4xl tracking-tight mb-6 max-w-2xl">
-          Backed by the organizations shaping AI safety
-        </h2>
-        <p className="text-muted-foreground leading-relaxed max-w-2xl">
-          TAISI is part of the Kairos-funded network of AI safety
-          groups at leading universities worldwide — including Oxford,
-          Harvard, MIT, and Cornell. Our programs are hosted at
-          Trajectory Labs, a dedicated AI safety research hub in
-          Toronto.
+      {/* Network + Contact */}
+      <div className="mt-10 text-sm text-muted-foreground leading-relaxed space-y-3">
+        <p>
+          Funded by Kairos, which backs AI safety groups at Oxford, Harvard, MIT,
+          and Cornell. Partnered with Trajectory Labs, an AI safety research hub
+          in Toronto.
         </p>
-      </section>
-
-      {/* Divider */}
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-      </div>
-
-      {/* FAQ */}
-      <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <div className="grid md:grid-cols-2 gap-16">
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="h-px w-8 bg-taisi-red" />
-              <span className="font-mono text-xs tracking-widest uppercase text-taisi-red">
-                FAQ
-              </span>
-            </div>
-            <h2 className="font-serif text-3xl md:text-4xl tracking-tight mb-6">
-              Questions you probably have
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              If your question isn&apos;t here, reach out at{" "}
-              <a
-                href="mailto:hello@taisi.ca"
-                className="text-taisi-blue hover:underline"
-              >
-                hello@taisi.ca
-              </a>
-            </p>
-          </div>
-          <Accordion type="single" collapsible>
-            <AccordionItem value="what-is-ais">
-              <AccordionTrigger className="text-left">
-                What is AI safety?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                AI safety is the field focused on making sure advanced AI
-                systems are reliable and aligned with human values.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="prereqs">
-              <AccordionTrigger className="text-left">
-                Do I need to know about AI safety?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                No. Morning sessions cover the fundamentals. This program is an
-                on-ramp — if you can code, you&apos;re ready.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="commitments">
-              <AccordionTrigger className="text-left">
-                I have an internship / other commitments
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                The program runs weekends only — one day per week for four
-                weeks.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="cost">
-              <AccordionTrigger className="text-left">
-                Is this free?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Yes. We cover food, the venue, and API credits. No cost to
-                participate.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="selective">
-              <AccordionTrigger className="text-left">
-                How selective is this?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Spots are limited and applications are reviewed on a rolling
-                basis. The application takes about 5 minutes.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="apply-reqs">
-              <AccordionTrigger className="text-left">
-                What do I need to apply?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Be a Toronto-area undergrad who can code.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="not-undergrad">
-              <AccordionTrigger className="text-left">
-                Can I apply if I&apos;m not an undergrad?
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
-                Yes! We welcome applications from anyone in the Toronto area
-                with programming experience.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section id="apply" className="relative overflow-hidden bg-taisi-dark text-white">
-        <div className="absolute top-[-30%] right-[-20%] w-[600px] h-[600px] rounded-full bg-taisi-red/10 blur-3xl" />
-        <div className="absolute bottom-[-30%] left-[-20%] w-[500px] h-[500px] rounded-full bg-taisi-blue/10 blur-3xl" />
-
-        <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32 text-center">
-          <h2 className="font-serif text-4xl md:text-6xl tracking-tight mb-6">
-            Ready to start?
-          </h2>
-          <p className="text-lg text-white/60 mb-10 max-w-xl mx-auto">
-            Limited spots. Applications reviewed on a rolling basis.
-            Closes April 5th.
-          </p>
-          <Button
-            asChild
-            size="lg"
-            className="bg-taisi-red hover:bg-taisi-red/90 text-white text-base px-12 py-6 rounded-full"
+        <p>
+          <a
+            href="mailto:hello@taisi.ca"
+            className="text-taisi-blue hover:underline"
           >
-            <a href="https://airtable.com/appVfG77MoQbG3bgi/pagW6YDWqH4GG76kw/form" target="_blank" rel="noopener noreferrer">
-              Apply Now →
-            </a>
-          </Button>
-          <p className="mt-6 text-sm text-white/40">
-            2-minute application · Spots fill as applications are reviewed
-          </p>
-        </div>
-      </section>
+            hello@taisi.ca
+          </a>
+        </p>
+      </div>
     </main>
   );
 }

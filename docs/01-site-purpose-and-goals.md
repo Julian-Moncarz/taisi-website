@@ -8,9 +8,12 @@ Toronto AI Safety Initiative (TAISI) is a student group at the University of Tor
 
 ## What is the site for right now?
 
-One thing: **drive applications to the Summer 2026 Intensive.**
+Two things, in order:
 
-Everything else is secondary. The site may also passively build credibility for people who google "TAISI" after seeing a flyer or hearing a class pitch, but the goal for those people is the same — apply.
+1. **Prove we're legit.** The main funnel is: we pitch in class → they look us up → they need to see we're real. The site is a credibility check, not a sales page. The selling happens in person.
+2. **Funnel to apply.** Once they trust us, give them a clear path to the Summer Intensive application.
+
+The site does NOT need to convince anyone to apply. It needs to not undermine the pitch they already heard.
 
 ## Target audience
 
@@ -39,26 +42,25 @@ Everything else is secondary. The site may also passively build credibility for 
 
 ## The core value proposition
 
-**The message (not final copy):** AI safety is one of the fastest-growing research fields. Orgs are hiring. You don't know how to break in. In 4 weekends, we'll intro you to the field, teach you the skills, have you build real portfolio pieces, and connect you with researchers — free, at a professional research space, on weekends so you can keep your internship.
+Delivered in person, not on the site. The site confirms and supports what they already heard. The site's job is credibility and information, not persuasion.
 
-> **Copy note:** The message is right, the tone needs work. Final copy in the style/structure doc. The credibility question ("can we convince people we are legit?") is answered by design + partner names + program specificity, not by copy alone.
+> **Copy note:** Site copy should be informational and confident, not salesy. State facts. Let the design, partners, and program specificity do the credibility work.
 
 ## Primary CTA
 
-**"Apply"** — not "give us your email." The application should be short (name, email, program, year, 1–2 short-answer questions). It should feel like an opportunity, not a newsletter signup. The act of applying creates psychological commitment.
+**"Apply"** — present but not aggressive. The apply button should be findable (navbar, program page) but the site shouldn't feel like it's pushing you to click it. People who want to apply will find it.
 
-- The apply button / form should be impossible to miss on every page.
-- Applications close April 5th — deadline creates urgency.
-- "Limited spots" / "rolling review" — not a specific number.
+- Application takes ~10 minutes.
+- Applications close April 5th.
+- Rolling review, limited spots.
 
 ## What the site needs to make someone feel
 
-A target student (2nd year CS, has an internship lined up, curious about AI, maybe saw a poster or heard a pitch in CSC148) lands on the site. They should feel:
+A target student (2nd year CS, has an internship lined up, curious about AI, heard a pitch in CSC148) looks us up. They should feel:
 
 1. **"These people are legit."** — Kairos network (Oxford, Harvard, MIT, Cornell), Trajectory Labs partnership, professional design. This is not a club that meets in a basement. They have money and are real.
-2. **"This is a real opportunity."** — Selective application, limited spots, tangible outcomes (portfolio, skills, network). This is worth 4 weekends.
-3. **"I could actually do this."** — It's free, it's on weekends, you don't need to already know AIS, you just need to be able to code. Low barrier, high reward.
-4. **"I should apply now."** — Deadline, rolling review, limited spots. Don't sit on it.
+2. **"This matches what they told me."** — The program details confirm what they heard in the pitch. No surprises, no bait-and-switch.
+3. **"I know how to apply."** — Clear path to the application. Not buried, not in their face.
 
 ## Objections the site must overcome
 

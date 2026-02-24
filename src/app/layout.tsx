@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "TAISI — Toronto AI Safety Initiative",
   description:
-    "A free, selective weekend intensive for Toronto undergrads. Build AI safety research skills, portfolio pieces, and connections — in 4 weekends.",
+    "A student group at the University of Toronto focused on mitigating catastrophic risks from advanced AI.",
 };
 
 export default function RootLayout({

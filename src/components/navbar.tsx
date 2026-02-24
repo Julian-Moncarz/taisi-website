@@ -17,7 +17,7 @@ export function Navbar() {
             alt=""
             className="h-6 w-auto"
           />
-          <span className="font-serif text-xl tracking-tight">TAISI</span>
+          <span className="font-serif text-sm tracking-tight leading-tight">Toronto AI Safety<br />Student Initiative</span>
         </Link>
         <div className="hidden items-center gap-8 sm:flex">
           <Link
@@ -26,14 +26,8 @@ export function Navbar() {
           >
             Programs
           </Link>
-          <Link
-            href="/about"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            About
-          </Link>
           <Button asChild size="sm" className="bg-taisi-red hover:bg-taisi-red/90 text-white">
-            <a href="https://airtable.com/appVfG77MoQbG3bgi/pagW6YDWqH4GG76kw/form" target="_blank" rel="noopener noreferrer">Apply →</a>
+            <a href="https://airtable.com/appVfG77MoQbG3bgi/pagW6YDWqH4GG76kw/form" target="_blank" rel="noopener noreferrer">Apply &rarr;</a>
           </Button>
         </div>
         <button
@@ -57,16 +51,9 @@ export function Navbar() {
           >
             Programs
           </Link>
-          <Link
-            href="/about"
-            className="text-sm text-muted-foreground"
-            onClick={() => setOpen(false)}
-          >
-            About
-          </Link>
           <Button asChild size="sm" className="w-fit bg-taisi-red hover:bg-taisi-red/90 text-white">
-            <a href="#apply" onClick={() => setOpen(false)}>
-              Apply →
+            <a href="https://airtable.com/appVfG77MoQbG3bgi/pagW6YDWqH4GG76kw/form" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>
+              Apply &rarr;
             </a>
           </Button>
         </div>

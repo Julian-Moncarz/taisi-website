@@ -1,8 +1,15 @@
 import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function Program() {
   return (
     <main className="">
+      {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-taisi-blue/5 blur-3xl" />
         <div className="mx-auto max-w-3xl px-6 pt-24 pb-16 md:pt-32 relative">
@@ -16,32 +23,68 @@ export default function Program() {
             Summer Intensive
           </h1>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-xl">
-            4 weekends. AI safety research skills and portfolio pieces you can
-            show employers and grad programs. Free.
+            A hands-on AI safety research program for Toronto-area undergrads.
+            Four weekend sessions, free, hosted at Trajectory Labs.
           </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-3xl px-6 pb-24">
         <div className="space-y-16">
+          {/* Who & What */}
           <div>
-            <h2 className="font-serif text-2xl mb-6">Program structure</h2>
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              One full day per weekend for four consecutive weeks. Each day:
+            <h2 className="font-serif text-2xl mb-6">Who it&apos;s for</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Selective. Toronto-area undergrads with strong technical
+              backgrounds (CS, math, stats, engineering, or similar). No
+              prerequisites in AI safety — the program teaches fundamentals. If
+              you can code, you&apos;re ready.
             </p>
+          </div>
+
+          {/* Schedule */}
+          <div>
+            <h2 className="font-serif text-2xl mb-6">Schedule</h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              4 sessions from May to August 2026. Each session is 4 consecutive
+              Saturdays or Sundays, 10:00–5:30. Compatible with internships.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                { label: "Session 1", dates: "May 9 – 31" },
+                { label: "Session 2", dates: "June 6 – 28" },
+                { label: "Session 3", dates: "July 4 – 26" },
+                { label: "Session 4", dates: "Aug 1 – 23" },
+              ].map((s) => (
+                <div
+                  key={s.label}
+                  className="rounded-xl border bg-card p-5"
+                >
+                  <span className="font-mono text-[11px] tracking-widest uppercase text-muted-foreground">
+                    {s.label}
+                  </span>
+                  <p className="text-sm font-medium mt-2">{s.dates}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Day structure */}
+          <div>
+            <h2 className="font-serif text-2xl mb-6">Each day</h2>
             <div className="space-y-6 border-l-2 border-taisi-blue/20 pl-8">
               {[
                 {
                   time: "Morning",
-                  desc: "AI safety fundamentals — threat models, alignment approaches, governance. You'll understand the field and why it matters.",
+                  desc: "AI safety fundamentals — threat models, alignment approaches, governance.",
                 },
                 {
                   time: "Lunch",
-                  desc: "Catered. AI safety researchers join to share their work, answer questions, and connect with participants.",
+                  desc: "Catered. AI safety researchers join to share their work and connect with you.",
                 },
                 {
                   time: "Afternoon",
-                  desc: "Hands-on technical workshops. Build AI evaluations, analyze research directions, learn tools used in real AIS research. Every session produces an artifact you keep.",
+                  desc: "Technical workshops — build evaluations, learn tools, produce artifacts you keep.",
                 },
               ].map((item) => (
                 <div key={item.time}>
@@ -54,41 +97,46 @@ export default function Program() {
                 </div>
               ))}
             </div>
-          </div>
-
-          <div>
-            <h2 className="font-serif text-2xl mb-6">
-              What you might work on
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Topics may include: building AI evaluations with Inspect,
-              analyzing whether a research direction is impactful, understanding
-              alignment approaches, and producing write-ups that demonstrate
-              research competence. The curriculum gives you skills
-              immediately legible to AIS research organizations.
+            <p className="text-sm text-muted-foreground mt-6">
+              Weekly readings between sessions.
             </p>
           </div>
 
+          {/* What you get */}
           <div>
-            <h2 className="font-serif text-2xl mb-6">Who it&apos;s for</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Technical undergrads in the Toronto area. CS, math, stats, econ,
-              engineering — any quantitative background. You don&apos;t
-              need to know what AI safety is yet. If you can code, you&apos;re
-              ready.
-            </p>
+            <h2 className="font-serif text-2xl mb-6">What you get</h2>
+            <ul className="space-y-3 text-muted-foreground leading-relaxed">
+              <li>Understanding of AI safety as a field</li>
+              <li>Research skills applicable to real AIS work</li>
+              <li>
+                Portfolio pieces — GitHub repos and published write-ups
+              </li>
+              <li>Network of AI safety researchers</li>
+              <li>Path to summer research mentorship</li>
+              <li>
+                Exposure to one of the most pressing issues of our time
+              </li>
+            </ul>
           </div>
 
+          {/* Logistics */}
           <div>
             <h2 className="font-serif text-2xl mb-6">Logistics</h2>
             <div className="grid sm:grid-cols-2 gap-6">
               {[
-                { label: "When", value: "Summer 2026, one weekend day per week for 4 weeks" },
-                { label: "Where", value: "Trajectory Labs — AI safety research hub, Toronto" },
-                { label: "Cost", value: "Free. Food and API credits covered." },
-                { label: "Commitment", value: "4 full days. Designed for students with internships." },
+                {
+                  label: "Where",
+                  value: "Trajectory Labs, Toronto",
+                },
+                {
+                  label: "Cost",
+                  value: "Free — food + API credits covered",
+                },
               ].map((item) => (
-                <div key={item.label} className="rounded-xl border bg-card p-5">
+                <div
+                  key={item.label}
+                  className="rounded-xl border bg-card p-5"
+                >
                   <span className="font-mono text-[11px] tracking-widest uppercase text-muted-foreground">
                     {item.label}
                   </span>
@@ -98,21 +146,32 @@ export default function Program() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-2xl bg-taisi-dark text-white p-10 md:p-12">
+          {/* Apply CTA */}
+          <div
+            id="apply"
+            className="relative overflow-hidden rounded-2xl bg-taisi-dark text-white p-10 md:p-12"
+          >
             <div className="absolute top-[-50%] right-[-30%] w-[400px] h-[400px] rounded-full bg-taisi-red/15 blur-3xl" />
             <div className="relative">
               <h2 className="font-serif text-2xl md:text-3xl mb-3">
-                Ready to apply?
+                Apply now
               </h2>
               <p className="text-sm text-white/60 mb-6">
-                Limited spots. Applications close April 5th.
+                ~10 min application. Rolling review. Closes April 5th. Limited
+                spots.
               </p>
               <Button
                 asChild
                 size="lg"
                 className="bg-taisi-red hover:bg-taisi-red/90 text-white rounded-full px-8"
               >
-                <a href="https://airtable.com/appVfG77MoQbG3bgi/pagW6YDWqH4GG76kw/form" target="_blank" rel="noopener noreferrer">Apply Now →</a>
+                <a
+                  href="https://airtable.com/appVfG77MoQbG3bgi/pagW6YDWqH4GG76kw/form"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Apply Now &rarr;
+                </a>
               </Button>
             </div>
           </div>
@@ -125,7 +184,7 @@ export default function Program() {
       </div>
 
       {/* Intro Fellowships */}
-      <section className="mx-auto max-w-3xl px-6 py-24">
+      <section id="fellowships" className="mx-auto max-w-3xl px-6 py-24">
         <div className="space-y-16">
           <div>
             <div className="flex items-center gap-2 mb-8">
@@ -138,14 +197,21 @@ export default function Program() {
               Intro to AI Safety Fellowships
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              Two 8-week reading groups covering the fundamentals of AI safety
-              — one focused on alignment, one on governance. Weekly sessions
-              over dinner, on a schedule set by you and your cohort.
+              Two 8-week reading groups covering the fundamentals of AI safety —
+              one focused on alignment, one on governance. Weekly sessions over
+              dinner, on a schedule set by you and your cohort.
             </p>
             <p className="mt-4 text-sm text-muted-foreground">
               Curriculum developed by{" "}
-              <a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer" className="text-taisi-blue hover:underline">BlueDot Impact</a>,
-              adapted by TAISI.
+              <a
+                href="https://bluedot.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-taisi-blue hover:underline"
+              >
+                BlueDot Impact
+              </a>
+              , adapted by TAISI.
             </p>
           </div>
 
@@ -188,6 +254,66 @@ export default function Program() {
               open again next spring.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="mx-auto max-w-3xl px-6">
+        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      </div>
+
+      {/* FAQ */}
+      <section className="mx-auto max-w-3xl px-6 py-24">
+        <div className="grid md:grid-cols-2 gap-16">
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="h-px w-8 bg-taisi-red" />
+              <span className="font-mono text-xs tracking-widest uppercase text-taisi-red">
+                FAQ
+              </span>
+            </div>
+            <h2 className="font-serif text-3xl md:text-4xl tracking-tight mb-6">
+              Questions you probably have
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              If your question isn&apos;t here, reach out at{" "}
+              <a
+                href="mailto:hello@taisi.ca"
+                className="text-taisi-blue hover:underline"
+              >
+                hello@taisi.ca
+              </a>
+            </p>
+          </div>
+          <Accordion type="single" collapsible>
+            <AccordionItem value="what-is-ais">
+              <AccordionTrigger className="text-left">
+                What is AI safety?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                AI safety is the field focused on making sure advanced AI systems
+                are reliable and aligned with human values.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="selective">
+              <AccordionTrigger className="text-left">
+                How selective is this?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Spots are limited and applications are reviewed on a rolling
+                basis.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="not-undergrad">
+              <AccordionTrigger className="text-left">
+                Can I apply if I&apos;m not an undergrad?
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                Yes! We welcome applications from anyone in the Toronto area with
+                programming experience.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
     </main>
