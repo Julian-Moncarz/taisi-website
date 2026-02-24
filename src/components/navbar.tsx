@@ -11,15 +11,16 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-2.5">
           <Image
-            src="/logo.webp"
-            alt="TAISI"
-            width={160}
-            height={21}
-            className="h-5 w-auto"
+            src="/icon.png"
+            alt=""
+            width={280}
+            height={322}
+            className="h-8 w-auto"
             priority
           />
+          <span className="font-serif text-xl tracking-tight">TAISI</span>
         </Link>
         <div className="hidden items-center gap-8 sm:flex">
           <Link

@@ -49,7 +49,7 @@ export default function About() {
             <p className="text-muted-foreground leading-relaxed">
               TAISI is funded by Kairos, which supports AI safety groups at
               leading universities including Oxford, Harvard, MIT, and Cornell.
-              Our summer intensive is hosted at Trajectory Labs, a dedicated AI
+              Our programs are hosted at Trajectory Labs, a dedicated AI
               safety research hub in Toronto.
             </p>
           </div>
