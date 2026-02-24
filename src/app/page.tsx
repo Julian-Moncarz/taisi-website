@@ -8,7 +8,7 @@ import {
 
 export default function Home() {
   return (
-    <main className="pb-24 sm:pb-0">
+    <main className="">
       {/* Hero */}
       <section className="relative overflow-hidden">
         {/* Subtle gradient orbs */}
@@ -41,7 +41,7 @@ export default function Home() {
               size="lg"
               className="bg-taisi-red hover:bg-taisi-red/90 text-white text-base px-10 py-6 rounded-full"
             >
-              <a href="https://airtable.com/appVfG77MoQbG3bgi/pagW6YDWqH4GG76kw/form" target="_blank" rel="noopener noreferrer">Apply Now</a>
+              <a id="hero-apply" href="https://airtable.com/appVfG77MoQbG3bgi/pagW6YDWqH4GG76kw/form" target="_blank" rel="noopener noreferrer">Apply Now</a>
             </Button>
             <div className="flex flex-col gap-1 text-sm text-muted-foreground">
               <span>Free · Limited spots</span>
@@ -93,7 +93,7 @@ export default function Home() {
           ].map((item) => (
             <div
               key={item.title}
-              className="bg-card p-8 md:p-10 group hover:bg-taisi-warm/50 transition-colors"
+              className="bg-card p-8 md:p-10"
             >
               <div className={`h-1 w-8 bg-${item.accent} mb-6 rounded-full`} />
               <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
@@ -118,37 +118,45 @@ export default function Home() {
             One day a week.<br />Four weeks.
           </h2>
 
-          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="max-w-2xl">
             {[
               {
                 label: "Morning",
                 desc: "AI safety fundamentals — threat models, alignment, governance. Understand the field.",
+                accent: "bg-taisi-blue",
               },
               {
                 label: "Lunch",
                 desc: "Catered. AI safety researchers join to share their work and connect with you.",
+                accent: "bg-taisi-red",
               },
               {
                 label: "Afternoon",
                 desc: "Technical workshops — build evaluations, learn tools, produce artifacts you keep.",
+                accent: "bg-taisi-blue",
               },
               {
                 label: "Done",
                 desc: "Go home with new skills and something to show for it. Repeat next weekend.",
+                accent: "bg-taisi-red",
               },
-            ].map((item) => (
-              <div key={item.label}>
-                <h3 className="text-lg font-semibold mb-3">
-                  {item.label}
-                </h3>
-                <p className="text-sm text-white/60 leading-relaxed">
-                  {item.desc}
-                </p>
+            ].map((item, i) => (
+              <div key={item.label} className="flex gap-6 relative">
+                <div className="flex flex-col items-center">
+                  <div className={`w-2.5 h-2.5 rounded-full ${item.accent} shrink-0 mt-1.5`} />
+                  {i < 3 && <div className="w-px flex-1 bg-white/10" />}
+                </div>
+                <div className={i < 3 ? "pb-8" : ""}>
+                  <h3 className="text-lg font-semibold">{item.label}</h3>
+                  <p className="text-sm text-white/60 leading-relaxed mt-1">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-16 flex flex-wrap gap-x-12 gap-y-4 text-sm">
+          <div className="mt-16 grid grid-cols-3 gap-8 max-w-2xl text-sm">
             <div>
               <span className="text-white/40 block mb-1">Where</span>
               <span>Trajectory Labs, Toronto</span>
@@ -167,25 +175,22 @@ export default function Home() {
 
       {/* Credibility */}
       <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <div className="max-w-2xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="h-px w-8 bg-taisi-blue" />
-            <span className="font-mono text-xs tracking-widest uppercase text-taisi-blue">
-              Our network
-            </span>
-            <div className="h-px w-8 bg-taisi-blue" />
-          </div>
-          <h2 className="font-serif text-3xl md:text-4xl tracking-tight mb-6">
-            Backed by the organizations shaping AI safety
-          </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            TAISI is part of the Kairos-funded network of AI safety
-            groups at leading universities worldwide — including Oxford,
-            Harvard, MIT, and Cornell. Our programs are hosted at
-            Trajectory Labs, a dedicated AI safety research hub in
-            Toronto.
-          </p>
+        <div className="flex items-center gap-2 mb-4">
+          <div className="h-px w-8 bg-taisi-blue" />
+          <span className="font-mono text-xs tracking-widest uppercase text-taisi-blue">
+            Our network
+          </span>
         </div>
+        <h2 className="font-serif text-3xl md:text-4xl tracking-tight mb-6 max-w-2xl">
+          Backed by the organizations shaping AI safety
+        </h2>
+        <p className="text-muted-foreground leading-relaxed max-w-2xl">
+          TAISI is part of the Kairos-funded network of AI safety
+          groups at leading universities worldwide — including Oxford,
+          Harvard, MIT, and Cornell. Our programs are hosted at
+          Trajectory Labs, a dedicated AI safety research hub in
+          Toronto.
+        </p>
       </section>
 
       {/* Divider */}
@@ -310,16 +315,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="mx-auto max-w-6xl px-6 py-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
-        <span>© 2026 Toronto AI Safety Initiative</span>
-        <div className="flex gap-6">
-          <a href="/program" className="hover:text-foreground transition-colors">Programs</a>
-          <a href="/about" className="hover:text-foreground transition-colors">About</a>
-          <a href="mailto:hello@taisi.ca" className="hover:text-foreground transition-colors">Contact</a>
-        </div>
-      </footer>
     </main>
   );
 }

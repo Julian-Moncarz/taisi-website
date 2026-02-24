@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Program() {
   return (
-    <main className="pb-24 sm:pb-0">
+    <main className="">
       <section className="relative overflow-hidden">
         <div className="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-taisi-blue/5 blur-3xl" />
         <div className="mx-auto max-w-3xl px-6 pt-24 pb-16 md:pt-32 relative">
@@ -190,10 +190,6 @@ export default function Program() {
           </div>
         </div>
       </section>
-
-      <footer className="mx-auto max-w-3xl px-6 py-8 text-center text-xs text-muted-foreground">
-        © 2026 Toronto AI Safety Initiative
-      </footer>
     </main>
   );
 }
