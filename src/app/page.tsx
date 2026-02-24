@@ -178,43 +178,24 @@ export default function Home() {
 
       {/* Credibility */}
       <section className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <div className="flex flex-col md:flex-row gap-12 md:gap-24 items-start">
-          <div className="flex-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="h-px w-8 bg-taisi-blue" />
-              <span className="font-mono text-xs tracking-widest uppercase text-taisi-blue">
-                Our network
-              </span>
-            </div>
-            <h2 className="font-serif text-3xl md:text-4xl tracking-tight mb-6">
-              Backed by the organizations shaping AI safety
-            </h2>
-            <p className="text-muted-foreground leading-relaxed">
-              TAISI is part of the Kairos-funded network of AI safety
-              groups at leading universities worldwide — including Oxford,
-              Harvard, MIT, and Cornell. Our programs are hosted at
-              Trajectory Labs, a dedicated AI safety research hub in
-              Toronto.
-            </p>
+        <div className="max-w-2xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <div className="h-px w-8 bg-taisi-blue" />
+            <span className="font-mono text-xs tracking-widest uppercase text-taisi-blue">
+              Our network
+            </span>
+            <div className="h-px w-8 bg-taisi-blue" />
           </div>
-          <div className="flex-1 grid grid-cols-2 gap-4">
-            {[
-              { label: "Network", value: "Kairos-funded" },
-              { label: "Partner universities", value: "Oxford, Harvard, MIT, Cornell" },
-              { label: "Hosted at", value: "Trajectory Labs" },
-              { label: "Past programs", value: "Multiple fellowships run" },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="rounded-xl border bg-card p-5"
-              >
-                <span className="font-mono text-[11px] tracking-widest uppercase text-muted-foreground">
-                  {item.label}
-                </span>
-                <p className="text-sm font-medium mt-2">{item.value}</p>
-              </div>
-            ))}
-          </div>
+          <h2 className="font-serif text-3xl md:text-4xl tracking-tight mb-6">
+            Backed by the organizations shaping AI safety
+          </h2>
+          <p className="text-muted-foreground leading-relaxed">
+            TAISI is part of the Kairos-funded network of AI safety
+            groups at leading universities worldwide — including Oxford,
+            Harvard, MIT, and Cornell. Our programs are hosted at
+            Trajectory Labs, a dedicated AI safety research hub in
+            Toronto.
+          </p>
         </div>
       </section>
 
