@@ -44,7 +44,7 @@ export default function Home() {
               <a href="https://airtable.com/appVfG77MoQbG3bgi/pagW6YDWqH4GG76kw/form" target="_blank" rel="noopener noreferrer">Apply Now</a>
             </Button>
             <div className="flex flex-col gap-1 text-sm text-muted-foreground">
-              <span>4 weekends · Free · Limited spots</span>
+              <span>Free · Limited spots</span>
               <span>Apply early — spots fill as applications are reviewed</span>
             </div>
           </div>
