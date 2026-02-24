@@ -81,7 +81,7 @@ export default function About() {
                 size="lg"
                 className="bg-taisi-red hover:bg-taisi-red/90 text-white rounded-full px-8"
               >
-                <a href="/#apply">Apply Now →</a>
+                <a href="https://airtable.com/appVfG77MoQbG3bgi/pagW6YDWqH4GG76kw/form" target="_blank" rel="noopener noreferrer">Apply Now →</a>
               </Button>
             </div>
           </div>
