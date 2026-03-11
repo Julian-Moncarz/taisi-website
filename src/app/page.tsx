@@ -12,8 +12,10 @@ function Hero() {
 
       <div className="space-y-4 sm:space-y-5 text-[17px] sm:text-[19px] leading-[1.7] text-text-secondary">
         <p className="text-text">
-          We are part of a network of university AI safety groups alongside
-          MIT, Harvard, and Cambridge, funded by Kairos. We run introductory fellowships and a summer intensive for ambitious undergraduates, with 50+ fellows across 8 cohorts to date.
+          We are part of a network of university AI safety groups funded by Kairos, alongside
+          MIT, Harvard, and Cambridge. We run{" "}
+          <Link href="/summer-intensive" className="underline hover:text-accent transition-colors">intensives</Link> during the summer and{" "}
+          <Link href="/fellowships" className="underline hover:text-accent transition-colors">fellowships</Link> during the school year, with 50+ participants across 8 cohorts to date.
         </p>
       </div>
 

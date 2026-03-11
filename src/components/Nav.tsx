@@ -8,8 +8,8 @@ import { createPortal } from "react-dom";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/fellowships", label: "Fellowships" },
   { href: "/summer-intensive", label: "Summer Intensive" },
+  { href: "/fellowships", label: "Fellowships" },
 ];
 
 export default function Nav() {

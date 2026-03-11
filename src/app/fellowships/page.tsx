@@ -8,18 +8,19 @@ export default function Fellowships() {
 
         <div className="space-y-4 sm:space-y-5 text-[17px] sm:text-[19px] leading-[1.7] text-text-secondary">
           <p className="text-text">
-            We offer two parallel introductory fellowships in AI safety:
-            alignment and governance.
+            We offer two parallel introductory fellowships in AI safety:{" "}
+            <span className="text-orange-500 font-semibold">alignment</span> and{" "}
+            <span className="text-orange-500 font-semibold">governance</span>.
           </p>
           <p>
-            The governance track examines the role of policy, institutions, and
-            global coordination to reduce AI risks, while the alignment track
-            introduces the technical challenge of making AI systems reliably
-            follow human intentions.
+            The alignment track introduces the technical challenge of making AI
+            systems reliably follow human intentions, while the governance track
+            examines the role of policy, institutions, and global coordination to
+            reduce AI risks.
           </p>
           <p>
             Fellowships run weekly over dinner for 8 sessions in the form of
-            paper discussions, with timing set by fellows and facilitators.
+            paper discussions.
           </p>
           <p className="text-text font-semibold">
             Applications are currently closed, and will reopen mid-March.

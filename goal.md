@@ -15,7 +15,3 @@
 3. **One clear, seasonal CTA** in the hero. Right now: "Apply to Summer Intensive." When that closes: "Apply to Fellowship." When both are closed: "Join the mailing list." Always one button, always obvious.
 4. **Trim copy ~30%.** The content is good but there's too much of it before you get to the structure. Lead with what matters, cut the preamble.
 5. **Community section on homepage.** Grid of candid photos + short quotes from fellows. Not bios — vibes. "I came in knowing nothing about alignment. Now I'm doing interpretability research at Vector." This is how you show the community is cool without saying it.
-6. **Visual identity:** Clean, minimal, white background, one accent color used only for CTAs and key emphasis.
-7. **Stats row on homepage.** "50+ fellows · 8 cohorts · Funded by Kairos" — one line below hero text, above the CTA button.
-8. **Discord & mailing list more prominent.** Add a "Stay connected" section on the homepage and/or a secondary link in the hero. Not just buried in the footer.
-9. **Photos on subpages too.** Summer intensive and fellowships pages each get at least one relevant community photo near the top.
