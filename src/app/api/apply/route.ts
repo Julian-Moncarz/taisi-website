@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 const PAT = process.env.AIRTABLE_PAT!;
 const BASE_ID = process.env.AIRTABLE_BASE_ID!;
 const TABLE_ID = process.env.AIRTABLE_TABLE_ID!;
-const RESUME_FIELD_ID = "fldUwvf3dKicjR7zv";
+const RESUME_FIELD_ID = process.env.AIRTABLE_RESUME_FIELD_ID!;
 
 export async function POST(req: NextRequest) {
   try {
