@@ -1,14 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect, useCallback, FormEvent } from "react";
-
-const MAJOR_OPTIONS = [
-  "Computer Science", "Statistics", "Mathematics", "Economics", "Physics",
-  "Philosophy", "Psychology", "Neuroscience", "Political Science", "Linguistics",
-  "Biology", "Chemistry", "Engineering Science", "Electrical Engineering",
-  "Computer Engineering", "Mechanical Engineering", "Industrial Engineering",
-  "Data Science", "Cognitive Science", "Commerce", "Sociology", "English", "Other",
-];
+import Image from "next/image";
 
 const YEAR_OPTIONS = [
   "1st Year", "2nd Year", "3rd Year", "4th Year",
@@ -23,7 +16,7 @@ const STORAGE_KEY = "taisi-summer-intensive-draft";
 type DraftData = {
   name?: string;
   email?: string;
-  majors?: string[];
+  major?: string;
   year?: string;
   why?: string;
   projectLink?: string;
@@ -48,8 +41,6 @@ export default function SummerIntensive() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
-  const [selectedMajors, setSelectedMajors] = useState<string[]>([]);
-  const [majorDropdownOpen, setMajorDropdownOpen] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   const restoredRef = useRef(false);
 
@@ -64,7 +55,7 @@ export default function SummerIntensive() {
 
     if (draft.name) (form.elements.namedItem("name") as HTMLInputElement).value = draft.name;
     if (draft.email) (form.elements.namedItem("email") as HTMLInputElement).value = draft.email;
-    if (draft.majors?.length) setSelectedMajors(draft.majors);
+    if (draft.major) (form.elements.namedItem("major") as HTMLInputElement).value = draft.major;
     if (draft.year) (form.elements.namedItem("year") as HTMLSelectElement).value = draft.year;
     if (draft.why) (form.elements.namedItem("why") as HTMLTextAreaElement).value = draft.why;
     if (draft.projectLink) (form.elements.namedItem("projectLink") as HTMLInputElement).value = draft.projectLink;
@@ -84,7 +75,7 @@ export default function SummerIntensive() {
     const draft: DraftData = {
       name: data.get("name") as string,
       email: data.get("email") as string,
-      majors: selectedMajors,
+      major: data.get("major") as string,
       year: data.get("year") as string,
       why: data.get("why") as string,
       projectLink: data.get("projectLink") as string,
@@ -94,28 +85,11 @@ export default function SummerIntensive() {
       draft[`availability-${month}`] = data.get(`availability-${month}`) as string;
     }
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(draft)); } catch {}
-  }, [selectedMajors]);
-
-  // Save whenever majors change (since they're not native form elements)
-  useEffect(() => {
-    saveDraft();
-  }, [selectedMajors, saveDraft]);
-
-  function toggleMajor(major: string) {
-    setSelectedMajors((prev) =>
-      prev.includes(major) ? prev.filter((m) => m !== major) : [...prev, major]
-    );
-  }
+  }, []);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setError("");
-
-    if (selectedMajors.length === 0) {
-      setError("Please select at least one major.");
-      return;
-    }
-
     setSubmitting(true);
     const form = e.currentTarget;
     const data = new FormData(form);
@@ -124,7 +98,7 @@ export default function SummerIntensive() {
     const payload = new FormData();
     payload.set("name", data.get("name") as string);
     payload.set("email", data.get("email") as string);
-    payload.set("majors", JSON.stringify(selectedMajors));
+    payload.set("major", data.get("major") as string);
     payload.set("year", data.get("year") as string);
     payload.set("why", data.get("why") as string);
     payload.set("projectLink", (data.get("projectLink") as string) || "");
@@ -212,6 +186,19 @@ export default function SummerIntensive() {
           </div>
         </div>
 
+        <blockquote className="mt-10 border-l border-accent pl-5">
+          <p className="text-[15px] sm:text-[16px] leading-[1.7] text-text-secondary mb-4">
+            I came in curious and found a community of people who genuinely care about getting this right, a real grip on the technical landscape, and a clearer sense of where I want to contribute. The modern discussion space and free food are also awesome perks. These fellowships have given me a foundation for thinking about AI safety that I carry into everything I work on.
+          </p>
+          <footer className="flex items-center gap-3">
+            <Image src="/pera.webp" alt="Pera" width={64} height={64} className="w-16 h-16 object-cover object-top shrink-0" />
+            <div>
+              <span className="block text-[15px] font-semibold text-text">Pera</span>
+              <span className="block text-[13px] text-text-secondary">Fellow &rsquo;25</span>
+            </div>
+          </footer>
+        </blockquote>
+
         <p className="mt-10 text-text font-semibold text-[17px] sm:text-[19px]">
           Applications are selective and close April 5th, EoD.
         </p>
@@ -251,40 +238,7 @@ export default function SummerIntensive() {
             </Field>
 
             <Field label="Major(s)" required>
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={() => setMajorDropdownOpen(!majorDropdownOpen)}
-                  className="form-input !flex text-left items-center justify-between"
-                >
-                  <span className={`truncate ${selectedMajors.length === 0 ? "text-[#9ca3af]" : ""}`}>
-                    {selectedMajors.length === 0
-                      ? "Select your major(s)"
-                      : selectedMajors.join(", ")}
-                  </span>
-                  <svg className="w-4 h-4 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {majorDropdownOpen && (
-                  <div className="absolute z-10 mt-1 w-full bg-white border border-gray-200 shadow-lg max-h-60 overflow-y-auto">
-                    {MAJOR_OPTIONS.map((major) => (
-                      <label
-                        key={major}
-                        className="flex items-center px-3 py-2 hover:bg-gray-50 cursor-pointer text-[15px]"
-                      >
-                        <input
-                          type="checkbox"
-                          checked={selectedMajors.includes(major)}
-                          onChange={() => toggleMajor(major)}
-                          className="mr-2"
-                        />
-                        {major}
-                      </label>
-                    ))}
-                  </div>
-                )}
-              </div>
+              <input type="text" name="major" required className="form-input" placeholder="e.g., Computer Science, Mathematics" />
             </Field>
 
             <Field label="Year" required>

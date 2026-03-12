@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
     const fields: Record<string, unknown> = {
       "Full Name": formData.get("name"),
       Email: formData.get("email"),
-      Major: JSON.parse(formData.get("majors") as string), // array of strings
+      Major: formData.get("major"),
       Year: formData.get("year"),
       "Why do you want to do this program?": formData.get("why"),
       "May 2026 Availability": formData.get("availabilityMay"),
