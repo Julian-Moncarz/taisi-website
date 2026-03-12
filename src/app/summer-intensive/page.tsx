@@ -155,7 +155,7 @@ export default function SummerIntensive() {
             Application form
           </h2>
           <p className="text-[15px] text-text-secondary">
-            Fields marked with <span className="text-accent">*</span> are required.
+            Fields marked with <span className="text-accent">*</span> are required. Your progress is saved automatically.
           </p>
         </div>
 
