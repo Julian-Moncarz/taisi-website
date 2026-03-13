@@ -6,21 +6,14 @@ function Hero() {
   return (
     <section className="max-w-[1200px] mx-auto px-5 sm:px-8 pt-10 sm:pt-14 md:pt-20 pb-8 md:pb-10">
       <h1 className="text-[1.75rem] sm:text-[2.25rem] md:text-[3.25rem] leading-[1.15] tracking-tight mb-6 sm:mb-8 font-normal">
-        We are a student group working on reducing{" "}
-        <span className="text-accent">catastrophic risk from advanced AI.</span>
-      </h1>
-
-      {/* Previous header:
-      <h1 className="text-[1.75rem] sm:text-[2.25rem] md:text-[3.25rem] leading-[1.15] tracking-tight mb-6 sm:mb-8 font-normal">
-        We take talented students, introduce them to AI safety, and pour resources into making them{" "}
-        <span className="text-accent">impactful</span><br />
+        We take talented students, introduce them to AI safety, and invest heavily in making them{" "}
+        impactful<br />
         <RotatingText />
       </h1>
-      */}
 
       <div className="space-y-4 sm:space-y-5 text-[17px] sm:text-[19px] leading-[1.7] text-text-secondary">
         <p className="text-text">
-          We do this because we think reducing risks from advanced AI is the most important challenge of our time. It&rsquo;s also an exciting, open problem. It needs far more people working on it.
+          AI systems are becoming more powerful faster than our ability to make them safe. Making sure advanced AI goes well for humanity is one of the most important things anyone can work on. It&rsquo;s also an exciting, open problem, and it needs more people.
         </p>
         <p className="text-text">
           We are part of a network of university AI safety groups funded by <a href="https://kairos-project.org/" target="_blank" rel="noopener noreferrer" className="underline hover:text-accent transition-colors">Kairos</a>, which also
@@ -35,7 +28,7 @@ function Hero() {
           href="/summer-intensive"
           className="inline-flex items-center px-5 sm:px-6 py-3 bg-accent text-white text-[15px] font-semibold hover:bg-accent-hover transition-colors"
         >
-          Apply to Summer Intensive &rarr;
+          Apply to our Summer Intensive &rarr;
         </Link>
       </div>
     </section>
@@ -64,7 +57,7 @@ function Testimonials() {
   return (
     <section className="max-w-[1200px] mx-auto px-5 sm:px-8 pt-2 md:pt-4 pb-8 md:pb-10">
       <h2 className="text-[1.35rem] sm:text-[1.5rem] tracking-tight mb-6 sm:mb-8 font-normal text-text">
-        Our fellows love us:
+        What our fellows say:
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
         {testimonials.map((t, i) => (
