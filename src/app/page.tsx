@@ -12,7 +12,7 @@ function Hero() {
 
       <div className="space-y-4 sm:space-y-5 text-[17px] sm:text-[19px] leading-[1.7] text-text-secondary">
         <p className="text-text">
-          AI systems are becoming more powerful faster than our ability to make them safe. Making sure advanced AI goes well for humanity is one of the most important things anyone can work on. It&rsquo;s also an exciting, open problem, and it needs more people.
+          AI systems are advancing faster than we can make them safe. Making sure advanced AI goes well for humanity is the defining issue of our time. It&rsquo;s also an exciting, open problem, and it needs more people.
         </p>
         <p className="text-text">
           We are part of a network of university AI safety groups funded by <a href="https://kairos-project.org/" target="_blank" rel="noopener noreferrer" className="underline hover:text-accent transition-colors">Kairos</a>, which also
