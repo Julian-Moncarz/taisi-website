@@ -20,7 +20,6 @@ type DraftData = {
   major?: string;
   year?: string;
   why?: string;
-  changedMind?: string;
   projectLink?: string;
   [key: `availability-${string}`]: string;
 };
@@ -59,7 +58,6 @@ export default function SummerIntensive() {
     if (draft.major) (form.elements.namedItem("major") as HTMLInputElement).value = draft.major;
     if (draft.year) (form.elements.namedItem("year") as HTMLSelectElement).value = draft.year;
     if (draft.why) (form.elements.namedItem("why") as HTMLTextAreaElement).value = draft.why;
-    if (draft.changedMind) (form.elements.namedItem("changedMind") as HTMLTextAreaElement).value = draft.changedMind;
     if (draft.projectLink) (form.elements.namedItem("projectLink") as HTMLInputElement).value = draft.projectLink;
 
     for (const month of MONTHS) {
@@ -80,7 +78,6 @@ export default function SummerIntensive() {
       major: data.get("major") as string,
       year: data.get("year") as string,
       why: data.get("why") as string,
-      changedMind: data.get("changedMind") as string,
       projectLink: data.get("projectLink") as string,
     };
     for (const month of MONTHS) {
@@ -103,7 +100,6 @@ export default function SummerIntensive() {
     payload.set("major", data.get("major") as string);
     payload.set("year", data.get("year") as string);
     payload.set("why", data.get("why") as string);
-    payload.set("changedMind", data.get("changedMind") as string);
     payload.set("projectLink", (data.get("projectLink") as string) || "");
     payload.set("availabilityMay", data.get("availability-May") as string);
     payload.set("availabilityJune", data.get("availability-June") as string);
@@ -148,6 +144,9 @@ export default function SummerIntensive() {
           </p>
           <p className="text-text">
             One Saturday or Sunday a week, four weeks. Cohorts monthly May&ndash;August. Hosted at <a href="https://www.trajectorylabs.org/" target="_blank" rel="noopener noreferrer" className="underline hover:text-accent transition-colors">Trajectory Labs</a>, Toronto. Applications close April 5th.
+          </p>
+          <p className="text-text">
+            No prior AI safety or ML experience is required. If you are a smart, hardworking, ambitious student, we want you.
           </p>
         </div>
         </RoughNotationGroup>
@@ -201,32 +200,21 @@ export default function SummerIntensive() {
               </SelectWrapper>
             </Field>
 
-            <Field label="Why do you want to do this program?" required hint="~3 bullet points">
+            <Field label="What is the number one reason you want to do this program?" required>
               <textarea
                 name="why"
                 required
                 rows={5}
                 className="form-input resize-y"
-                placeholder={"- First reason\n- Second reason\n- Third reason"}
               />
             </Field>
 
-            <Field label="What's something you've changed your mind about recently?" required hint="Max 4 sentences">
-              <textarea
-                name="changedMind"
-                required
-                rows={5}
-                className="form-input resize-y"
-                placeholder={"I used to think... Now I think... because..."}
-              />
+            <Field label="Resume" required hint="PDF only">
+              <FileInput name="resume" accept=".pdf,application/pdf" required />
             </Field>
 
-            <Field label="Link us to something that shows your ability" hint="e.g., essay, blog post, GitHub repo, paper — optional">
+            <Field label="Link us to something that shows your ability" hint="e.g., essay, blog post, GitHub repo, paper (optional)">
               <input type="url" name="projectLink" className="form-input" placeholder="https://..." />
-            </Field>
-
-            <Field label="Resume" hint="PDF only — optional">
-              <FileInput name="resume" accept=".pdf,application/pdf" />
             </Field>
 
             <fieldset className="space-y-4">
@@ -289,7 +277,7 @@ export default function SummerIntensive() {
   );
 }
 
-function FileInput({ name, accept }: { name: string; accept: string }) {
+function FileInput({ name, accept, required }: { name: string; accept: string; required?: boolean }) {
   const [fileName, setFileName] = useState<string | null>(null);
   const inputRef = React.useRef<HTMLInputElement>(null);
   return (
@@ -300,6 +288,7 @@ function FileInput({ name, accept }: { name: string; accept: string }) {
           type="file"
           name={name}
           accept={accept}
+          required={required}
           className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
           onChange={(e) => setFileName(e.target.files?.[0]?.name || null)}
         />

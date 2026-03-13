@@ -6,8 +6,7 @@ function Hero() {
   return (
     <section className="max-w-[1200px] mx-auto px-5 sm:px-8 pt-10 sm:pt-14 md:pt-20 pb-8 md:pb-10">
       <h1 className="text-[1.75rem] sm:text-[2.25rem] md:text-[3.25rem] leading-[1.15] tracking-tight mb-6 sm:mb-8 font-normal">
-        We take talented students, introduce them to AI safety, and invest heavily in making them{" "}
-        impactful<br />
+        We invest heavily in making exceptional students into impactful AI safety{" "}
         <RotatingText />
       </h1>
 
@@ -83,7 +82,7 @@ function Testimonials() {
           </blockquote>
         ))}
       </div>
-      <p className="text-[15px] sm:text-[16px] text-text-secondary mt-8">
+      <p className="text-[17px] sm:text-[19px] leading-[1.7] text-text-secondary mt-8">
         Fellows have gone on to join SPAR, AI Safety Camp, and university labs such as <a href="https://zhijing-jin.com/home/" target="_blank" rel="noopener noreferrer" className="underline hover:text-accent transition-colors">Prof. Zhijing Jin&rsquo;s group</a>.
       </p>
     </section>

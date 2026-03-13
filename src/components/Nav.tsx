@@ -87,7 +87,7 @@ export default function Nav() {
         </div>
       </nav>
 
-      {/* Mobile menu — portaled to body so it escapes nav stacking context */}
+      {/* Mobile menu - portaled to body so it escapes nav stacking context */}
       {open && mounted && createPortal(
         <div className="md:hidden fixed inset-0 bg-white z-[90] pt-[76px]">
           <div className="flex flex-col px-5 pt-6 gap-6 text-[17px] font-medium">
